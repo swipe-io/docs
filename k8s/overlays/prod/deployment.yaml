@@ -1,0 +1,11 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: prod
+  name: swipe-docs
+spec:
+  template:
+    spec:
+      containers:
+        - name: swipe-docs
+          image: "registry.digitalocean.com/team127/swipe-docs:<IMAGE_TAG>"
