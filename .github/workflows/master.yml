@@ -37,7 +37,7 @@ jobs:
         run: doctl registry login --expiry-seconds 600
 
       - name: Push Image Registry
-        run: docker push registry.digitalocean.com/team127/swipe-docs
+        run: docker push registry.digitalocean.com/team127/swipe-docs:${IMAGE_TAG}
 
       - name: Update Deployment File
         run: sed -i 's|<IMAGE>|'${IMAGE_TAG}'|' $GITHUB_WORKSPACE/k8s/overlays/prod/deployment.yaml
