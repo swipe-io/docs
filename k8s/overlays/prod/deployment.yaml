@@ -9,3 +9,9 @@ spec:
       containers:
         - name: swipe-docs
           image: "registry.digitalocean.com/team127/swipe-docs:<IMAGE_TAG>"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: swipe-docs-prod
+  name: swipe-docs
