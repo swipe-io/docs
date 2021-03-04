@@ -7,7 +7,8 @@ sidebar_label: Установка
 Установите консольную утилиту Swipe:
 
 ```shell
-go get github.com/swipe-io/swipe/cmd/swipe
+brew tap swipe-io/swipe
+brew install swipe
 ```
 
 Swipe требуется версия Go с поддержкой [Golang Modules](https://github.com/golang/go/wiki/Modules).
