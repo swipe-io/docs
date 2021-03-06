@@ -1,45 +1,50 @@
 ---
 id: installation
-title: Установка
-sidebar_label: Установка
+title: Installation
+sidebar_label: Installation
 ---
-
-Установите консольную утилиту Swipe:
+### Install the Swipe console utility:
 
 ```shell
 brew tap swipe-io/swipe
 brew install swipe
 ```
 
-Swipe требуется версия Go с поддержкой [Golang Modules](https://github.com/golang/go/wiki/Modules).
-Поэтому не забудьте инициализировать модуль Go:
+Swipe requires a Go version with [Golang Modules](https://github.com/golang/go/wiki/Modules) support.
+So don't forget to initialize the Go module:
 
 ```shell
 go mod init github.com/my/repo
 ```
 
-а затем установите пакет Swipe:
+and then install the Swipe package:
 
 ```shell
 go get github.com/swipe-io/swipe/v2
 ```
 
-:::warning
-Версия пакета должна соответствовать версии консольной утилиты Swipe.
-:::
+> ⚠️ Warning:
+>
+> The package version must match
+>
+> the version of the Swipe console utility.
 
 
-Swipe генерирует код с использованием опции: функции, которая вызывает функции, 
-определяющие параметры генерации.
+Swipe generates code using the option: function, which calls functions,
+determining parameters of generation.
 
-Для описания параметров генерации создайте файл .go и добавьте функцию, 
-в тело функции добавьте вызов `swipe.Build`. 
-Также необходимо добавить тег сборки `// +build swipe`, 
-чтобы Golang игнорировал файл когда вы будете собирать ваше приложение.
 
-Ниже представлен простой пример файла настройки генерации JSON RPC транспорта:
+
+To describe the generation parameters, create a .go file and add a function,
+add a call to `swipe.Build` in the body of the function.
+
+You also need to add the build tag `// + build swipe`,
+to have Golang ignore the file when you build your application.
+
+Below is a simple example of a JSON RPC transport generation configuration file:
 
 ---
+
 ```go
 // +build swipe
 
@@ -55,12 +60,12 @@ func Swipe() {
 	Build(
 		Service(
 			HTTPServer(),
-			
+		
 			Interface((*controller.ExampleController)(nil), ""),
 
 			ClientsEnable([]string{"go"}),
 
-			JSONRPCEnable(),		
+			JSONRPCEnable(),	
 
 			OpenapiEnable(),
 			OpenapiOutput("./docs"),
@@ -74,12 +79,16 @@ func Swipe() {
 	)
 }
 ```
+
 ---
-Если вы хотите сгенерировать код, вы можете запустить:
+
+If you want to generate code, you can run:
 
 ```shell
 swipe ./pkg/...
 ```
 
-Приведенная выше команда выполнит поиск всех функций, 
-содержащих `swipe.Build`, и сгенерирует код в файлах` * _gen. * `.
+The above command will search for all functions,
+containing `swipe.Build`, and will generate the code in files`* _gen. *`.
+
+---
