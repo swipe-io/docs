@@ -1,14 +1,13 @@
 ---
 id: config
-title: Генерация загрузчика настроек
-sidebar_label: Генерация загрузчика настроек
+title: Generating the settings loader
+sidebar_label: Generating the settings loader
 ---
+## Begining
 
-## Начало
+Swipe has the ability to generate loading of settings from environment variables:
 
-В Swipe есть возможность сгенерировать загрузку настроек из переменных среды:
-
-Структура конфигурации:
+Configuration structure:
 
 ```go
 package example
@@ -22,9 +21,9 @@ type Database struct {
     Username string
     Password string
 }
- ```
+```
 
-Файл настроек Swipe:
+Swipe settings file:
 
 ```go
 package example
@@ -38,13 +37,13 @@ func Swipe() {
 		ConfigEnv(&Config{}),
 	)
 }
- ```
+```
 
-Swipe сгенерирует функцию загрузки `func LoadConfig() (cfg *Config, errs []error)`
+Swipe will generate a download function `func LoadConfig() (cfg *Config, errs []error)`
 
-## Настройки
+## Settings
 
-### Изменение имени метода загрузки настроек
+Changing the name of the loading method:
 
 ```go
 package example
@@ -61,9 +60,9 @@ func Swipe() {
 		),
 	)
 }
- ```
+```
 
-### Генерация markdown документации
+Generating markdown documentation:
 
 ```go
 package example
@@ -81,19 +80,24 @@ func Swipe() {
 		),
 	)
 }
- ```
+```
 
-## Теги структуры
+## Structure tags
 
-Swipe использует идиоматические значения по умолчанию для генерации имен переменных среды из имен полей Go.
-Чтобы переопределить значения по умолчанию, используйте следующие необязательные теги полей структуры:
+Swipe uses idiomatic defaults to generate environment variable names from Go field names.
+To override the default values, use the following optional structure field tags:
 
-| Тег                      |      Описание                                    |
-| ------------------------ | ------------------------------------------------ | 
-| env:"env_name"           | Заменить имя переменной среды по умолчанию.      | 
-| env:",required"          | Обязательное поле, пустые значения не допустимы  | 
-| env:",required,use_zero" | Обязательное поле, пустые значения допустимы     | 
 
-:::info
-Переменная среды генерируется в верхнем регистре, вложенные поля структуры разделяться через `_`.
-:::
+| Tag | Description |
+| - | - |
+| env:"env_name" | Replace the default environment variable name. |
+| env:",required" | Required field, empty values are not allowed |
+| env:",required,use_zero" | Required field, empty values are allowed |
+
+> ℹ️ info
+>
+> The environment variable is generated in uppercase,
+>
+> the nested fields of the structure are separated by `_`.
+
+---
