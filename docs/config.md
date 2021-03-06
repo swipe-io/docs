@@ -3,7 +3,7 @@ id: config
 title: Generating the settings loader
 sidebar_label: Generating the settings loader
 ---
-## Begining
+## Beginning
 
 Swipe has the ability to generate loading of settings from environment variables:
 
