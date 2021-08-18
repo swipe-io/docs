@@ -1,0 +1,65 @@
+{
+  "version-3.0.0/someSidebar": [
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Начало работы",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-3.0.0/installation"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Руководство",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-3.0.0/rest"
+        },
+        {
+          "type": "doc",
+          "id": "version-3.0.0/json_rpc"
+        },
+        {
+          "type": "doc",
+          "id": "version-3.0.0/multi_services"
+        },
+        {
+          "type": "doc",
+          "id": "version-3.0.0/client"
+        },
+        {
+          "type": "doc",
+          "id": "version-3.0.0/logging_instrumenting"
+        },
+        {
+          "type": "doc",
+          "id": "version-3.0.0/openapi"
+        },
+        {
+          "type": "doc",
+          "id": "version-3.0.0/gateway"
+        },
+        {
+          "type": "doc",
+          "id": "version-3.0.0/errors"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Особенности",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-3.0.0/config"
+        }
+      ]
+    }
+  ]
+}

@@ -1,3 +1,5 @@
+const versions = require('./versions.json');
+
 module.exports = {
   title: 'Swipe',
   tagline: 'Генерация транспортного слоя',
@@ -7,9 +9,14 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'swipe-io', // Usually your GitHub org/user name.
   projectName: 'Swipe', // Usually your repo name.
+  i18n: {
+    defaultLocale: 'ru',
+    locales: ['ru'],
+  },
   themeConfig: {
     navbar: {
       title: 'Swipe',
+      hideOnScroll: true,
       // logo: {
       //   alt: 'Swipe',
       //   src: 'img/logo.svg',
@@ -24,7 +31,25 @@ module.exports = {
         {to: 'docs/rest', label: 'Руководство', position: 'left'},
         {to: 'docs/enums_client', label: 'Особенности', position: 'left'},
         {
-          href: 'https://github.com/swipe-io/swipe',
+          type: 'docsVersionDropdown',
+          position: 'right',
+          dropdownActiveClassDisabled: true,
+          dropdownItemsAfter: [
+
+          ],
+        },
+        {
+          type: 'localeDropdown',
+          position: 'right',
+          dropdownItemsAfter: [
+            {
+              href: 'https://github.com/swipe-io/swipe/issues/21',
+              label: 'Help Us Translate',
+            },
+          ],
+        },
+        {
+          href: 'https://github.com/swipe-io/swipe/tree/v3',
           label: 'GitHub',
           position: 'right',
         },
