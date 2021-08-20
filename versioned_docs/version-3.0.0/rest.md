@@ -13,6 +13,8 @@ sidebar_label: REST API
 Для генерации достаточно добавить такие настройки:
 
 ```go
+// +build swipe
+
 package example
 
 import (
@@ -53,6 +55,8 @@ Swipe может генерировать документацию Openapi (Swag
 Для того чтобы изменить настройки метода, необходимо использовать функцию `MethodOptions`
 
 ```go
+// +build swipe
+
 package example
 
 import (
@@ -80,6 +84,8 @@ func swipe() {
 Для того чтобы изменить настройки, по умолчанию для всех методов, необходимо использовать функцию `MethodDefaultOptions`
 
 ```go
+// +build swipe
+
 package example
 
 import (
@@ -89,7 +95,7 @@ import (
   "github.com/example/app/pkg/swipe/swipegokit" 
 )
 
-func Swipe() {
+func swipe() {
     swipegokit.Gokit(
         swipegokit.Interface((*controller.ExampleController)(nil), "example"),
         
@@ -107,6 +113,8 @@ func Swipe() {
 `RESTMethod` устанавливает HTTP метод.
 
 ```go
+// +build swipe
+
 package example
 
 import (
@@ -135,6 +143,8 @@ func swipe() {
 - для GetByID будет путь `/getbyid`
 
 ```go
+// +build swipe
+
 package example
 
 import (
@@ -142,7 +152,7 @@ import (
   "github.com/example/app/pkg/swipe/swipegokit"
 )
 
-func Swipe() {
+func swipe() {
     swipegokit.Gokit(
         swipegokit.Interface((*controller.ExampleController)(nil), "example"),
         
@@ -166,6 +176,8 @@ func Swipe() {
 :::
 
 ```go
+// +build swipe
+
 package example
 
 import (
@@ -173,7 +185,7 @@ import (
   "github.com/example/app/pkg/swipe/swipegokit"
 )
 
-func Swipe() {
+func swipe() {
     swipegokit.Gokit(
         swipegokit.Interface((*controller.ExampleController)(nil), "example"),
         
@@ -197,6 +209,8 @@ func Swipe() {
 :::
 
 ```go
+// +build swipe
+
 package example
 
 import (
@@ -204,7 +218,7 @@ import (
   "github.com/example/app/pkg/swipe/swipegokit"
 )
 
-func Swipe() {
+func swipe() {
     swipegokit.Gokit(
         swipegokit.Interface((*controller.ExampleController)(nil), "example"),
         
@@ -229,6 +243,8 @@ func Swipe() {
 содержимое полей структуры `User` было внутри поля `data` 
 
 ```go
+// +build swipe
+
 package example
 
 import (
@@ -236,7 +252,7 @@ import (
   "github.com/example/app/pkg/swipe/swipegokit"
 )
 
-func Swipe() {
+func swipe() {
     swipegokit.Gokit(
         Interface((*controller.ExampleController)(nil), "example"),
         
@@ -277,6 +293,8 @@ interface {
 ```
 
 ```go
+// +build swipe
+
 package example
 
 import (
@@ -284,7 +302,7 @@ import (
   "github.com/example/app/pkg/swipe/swipegokit"
 )
 
-func Swipe() {
+func swipe() {
     swipegokit.Gokit(
         Interface((*controller.ExampleController)(nil), "example"),
         

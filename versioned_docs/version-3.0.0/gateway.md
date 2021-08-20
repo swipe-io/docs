@@ -10,6 +10,8 @@ Swipe можно использовать для генерации Gateway.
 необходимо сгенерировать gateway надо указать опцию `Gateway` в `Interface`
 
 ```go
+// +build swipe
+
 package example
 
 import (

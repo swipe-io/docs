@@ -12,6 +12,8 @@ JavaScript клиента для JSON RPC.
 `ClientsEnable` включает генерацию.
 
 ```go
+// +build swipe
+
 package example
 
 import (
@@ -50,6 +52,8 @@ func swipe() {
 :::
 
 ```go
+// +build swipe
+
 package example
 
 import (
@@ -79,6 +83,8 @@ func swipe() {
 `ClientEncodeRequest` используется для установки функции кодирования запроса.
 
 ```go
+// +build swipe
+
 package example
 
 import (
@@ -108,6 +114,8 @@ func swipe() {
 `ClientEncodeRequest` используется для установки функции раскодировки ответа.
 
 ```go
+// +build swipe
+
 package example
 
 import (

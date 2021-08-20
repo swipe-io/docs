@@ -11,6 +11,8 @@ sidebar_label: JSON RPC
 Для включения генерации JSON RPC достаточно добавить в настройки функцию `HTTPServer` и `JSONRPCEnable`:
 
 ```go
+// +build swipe
+
 package example
 
 import (
@@ -43,6 +45,8 @@ Swipe может генерировать документацию Openapi (Swag
 `JSONRPCDocEnable` используется для включения генерации markdown документации.
 
 ```go
+// +build swipe
+
 package example
 
 import (
@@ -70,6 +74,8 @@ func swipe() {
 `JSONRPCPath` меняет HTTP путь JSON RPC.
 
 ```go
+// +build swipe
+
 package example
 
 import (

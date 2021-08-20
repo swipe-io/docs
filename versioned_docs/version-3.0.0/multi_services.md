@@ -12,15 +12,16 @@ sidebar_label: Несколько интерфейсов в сервисе
 :::
 
 ```go
+// +build swipe
+
 package example
 
 import (
-  "github.com/example/app/pkg/controller"
-   
+  "github.com/example/app/pkg/controller"  
   "github.com/example/app/pkg/swipe/swipegokit"
 )
 
-func Swipe() {
+func swipe() {
     swipegokit.Gokit(
         Interface((*controller.UserController)(nil), "users"),
         Interface((*controller.GroupController)(nil), "groups"),

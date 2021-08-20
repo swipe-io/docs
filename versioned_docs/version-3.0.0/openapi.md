@@ -9,6 +9,8 @@ sidebar_label: Openapi (Swagger) документации
 `OpenapiEnable` используется для включения генерации Openapi документации.  
 
 ```go
+// +build swipe
+
 package example
 
 import (
@@ -36,6 +38,8 @@ func swipe() {
 `OpenapiOutput` используется для изменения пути генерации Openapi документации.
 
 ```go
+// +build swipe
+
 package example
 
 import (
@@ -60,24 +64,23 @@ func swipe() {
 Вы можете установить заголовок, описание и версию с помощью функции `OpenapiInfo`.
 
 ```go
+// +build swipe
+
 package example
 
 import (
   "github.com/example/app/pkg/controller"
-  
-  . "github.com/swipe-io/swipe/v2"
+  "github.com/example/app/pkg/swipe/swipegokit"
 )
 
-func Swipe() {
-    Build(
-        Service(
-            Interface((*controller.ExampleController)(nil), "example"),
-            
-            HTTPServer(),
-            
-            OpenapiEnable(),       
-            OpenapiInfo("Service Name", "Service description", "v1.0.0"),    			
-        ),
+func swipe() {
+    swipegokit.Gokit(        
+        swipegokit.Interface((*controller.ExampleController)(nil), "example"),
+               
+        swipegokit.HTTPServer(),
+               
+        swipegokit.OpenapiEnable(),       
+        swipegokit.OpenapiInfo("Service Name", "Service description", "v1.0.0"),    			       
     )
 }
 ```
@@ -87,25 +90,24 @@ func Swipe() {
 Вы можете установить контакты, с помощью функции `OpenapiContact`.
 
 ```go
+// +build swipe
+
 package example
 
 import (
-  "github.com/example/app/pkg/controller"
-  
-  . "github.com/swipe-io/swipe/v2"
+  "github.com/example/app/pkg/controller"  
+  "github.com/example/app/pkg/swipe/swipegokit"
 )
 
-func Swipe() {
-    Build(
-        Service(
-            Interface((*controller.ExampleController)(nil), "example"),
-            
-            HTTPServer(),
-            
-            OpenapiEnable(),       
-            OpenapiContact("John Doe", "jd@mail.com", "jd.com"),
-            OpenapiContact("No Name", "no@mail.com", ""),    			
-        ),
+func swipe() {
+    swipegokit.Gokit(
+        swipegokit.Interface((*controller.ExampleController)(nil), "example"),
+        
+        swipegokit.HTTPServer(),
+        
+        swipegokit.OpenapiEnable(),       
+        swipegokit.OpenapiContact("John Doe", "jd@mail.com", "jd.com"),
+        swipegokit.OpenapiContact("No Name", "no@mail.com", ""),    			
     )
 }
 ```
@@ -118,22 +120,19 @@ func Swipe() {
 package example
 
 import (
-  "github.com/example/app/pkg/controller"
-  
-  . "github.com/swipe-io/swipe/v2"
+  "github.com/example/app/pkg/controller"  
+  "github.com/example/app/pkg/swipe/swipegokit"
 )
 
-func Swipe() {
-    Build(
-        Service(
-            Interface((*controller.ExampleController)(nil), "example"),
-            
-            HTTPServer(),
-            
-            OpenapiEnable(),       
-            OpenapiServer("Test API", "http://api.test.com"),
-            OpenapiServer("Dev API", "http://api.dev.com"),    			
-        ),
+func swipe() {
+    swipegokit.Gokit(
+        swipegokit.Interface((*controller.ExampleController)(nil), "example"),
+        
+        swipegokit.HTTPServer(),
+        
+        swipegokit.OpenapiEnable(),       
+        swipegokit.OpenapiServer("Test API", "http://api.test.com"),
+        swipegokit.OpenapiServer("Dev API", "http://api.dev.com"),    			
     )
 }
 ```

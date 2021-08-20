@@ -12,6 +12,8 @@ sidebar_label: Метрики и логирование
 Пример включающий логирование для всех методов:
 
 ```go
+// +build swipe
+
 package example
 
 import (
@@ -35,6 +37,8 @@ func swipe() {
 ### Отключение логирование для определенного метода
 
 ```go
+// +build swipe
+
 package example
 
 import (
@@ -66,6 +70,8 @@ func swipe() {
 - `excludes` исключение параметра из логирования.
 
 ```go
+// +build swipe
+
 package example
 
 import (
@@ -113,6 +119,8 @@ func PopulateContext(ctx context.Context, r *http.Request) context.Context {
 ```
 
 ```go
+// +build swipe
+
 package example
 
 import (
@@ -169,6 +177,8 @@ func (e *SomeError) StatusCode() int {
 :::
 
 ```go
+// +build swipe
+
 package example
 
 import (
